@@ -1,4 +1,4 @@
-import {Column, Entity, ObjectId, ObjectIdColumn, OneToMany} from "typeorm";
+import {Column, Entity, ObjectId, ObjectIdColumn} from "typeorm";
 
 @Entity('products')
 export  class Product{
@@ -8,5 +8,4 @@ export  class Product{
     name!: string;
     @Column('number')
     price!: number;
-
 }

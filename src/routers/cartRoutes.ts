@@ -5,7 +5,7 @@ import CartServiceImpl from "../services/CartServiceImpl";
 import CartController from "../controllers/CartController";
 import {ProductDto} from "../dto/ProductDto";
 import {CartItem} from "../models/CartItem";
-import {body, param, validationResult} from "express-validator";
+import {body, param} from "express-validator";
 import validationMiddleware from "../middleware/validationMiddleware";
 
 

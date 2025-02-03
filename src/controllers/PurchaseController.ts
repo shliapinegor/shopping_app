@@ -1,6 +1,4 @@
 import PurchaseServiceImpl from "../services/PurchaseServiceImpl";
-import {ProductDto} from "../dto/ProductDto";
-import {CartItem} from "../models/CartItem";
 import {Purchase} from "../models/Purchase";
 
 export default class PurchaseController{

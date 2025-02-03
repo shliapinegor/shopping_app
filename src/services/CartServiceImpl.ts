@@ -1,6 +1,5 @@
 import CartService from "./CartService";
-import {Product} from "../models/Product";
-import AppRepositories, {appRepositories} from "../dao/AppRepositories";
+import AppRepositories from "../dao/AppRepositories";
 import {ProductDto} from "../dto/ProductDto";
 import {CartItem} from "../models/CartItem";
 

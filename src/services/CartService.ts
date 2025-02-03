@@ -1,4 +1,3 @@
-import {Product} from "../models/Product";
 import {ProductDto} from "../dto/ProductDto";
 import {CartItem} from "../models/CartItem";
 

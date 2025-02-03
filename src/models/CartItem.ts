@@ -12,6 +12,4 @@ export  class CartItem {
     userId!: number;
     @Column('number')
     quantity!: number
-    @OneToOne(() => Product, (product) => product.id)
-    product!: Product;
 }
