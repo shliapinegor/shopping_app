@@ -1,12 +1,17 @@
-import {Column, Entity, ObjectId, ObjectIdColumn} from "typeorm";
+import {Column, Entity, ManyToOne, ObjectId, ObjectIdColumn, OneToOne} from "typeorm";
+import {Product} from "./Product";
 
 
 @Entity('cartItems')
-export  class CartItem{
+export  class CartItem {
     @ObjectIdColumn()
-    userId!: ObjectId;
-    @Column()
-    productId!: number;
-    @Column()
+    itemId!: ObjectId;
+    @Column('string')
+    productId!: string;
+    @Column('number')
+    userId!: number;
+    @Column('number')
     quantity!: number
+    @OneToOne(() => Product, (product) => product.id)
+    product!: Product;
 }

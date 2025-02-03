@@ -1,14 +1,16 @@
 import {Column, Entity, ObjectId, ObjectIdColumn} from "typeorm";
+import {CartItem} from "./CartItem";
 
 @Entity('purchases')
-export  class Purchase{
+export class Purchase{
     @ObjectIdColumn()
-    userId!: ObjectId;
-    @Column()
-    items!: number;
-    @Column()
+    purchaseId!: ObjectId;
+    @Column('number')
+    userId!: number;
+    @Column('array')
+    items!: CartItem[];
+    @Column('number')
     totalPrice!: number;
-    @Column()
-    date!: Date;
-
+    @Column('string')
+    date!: string;
 }

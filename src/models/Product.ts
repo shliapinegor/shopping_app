@@ -1,13 +1,12 @@
+import {Column, Entity, ObjectId, ObjectIdColumn, OneToMany} from "typeorm";
 
+@Entity('products')
 export  class Product{
-    id!: number;
+    @ObjectIdColumn()
+    id!: ObjectId;
+    @Column('text')
     name!: string;
+    @Column('number')
     price!: number;
 
-
-    constructor(id: number, name: string, price: number) {
-        this.id = id;
-        this.name = name;
-        this.price = price;
-    }
 }

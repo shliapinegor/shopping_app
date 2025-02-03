@@ -1,7 +1,9 @@
 import express, {Application, Request, Response, NextFunction} from 'express'
+import 'reflect-metadata'
 import {PORT} from "./configApp";
 import cartRouter from "./routers/cartRoutes";
-import paymentRoutes from "./routers/paymentRoutes";
+import purchaseRoutes from "./routers/purchaseRoutes";
+import {initDB} from "./dao/db";
 
 const app:Application = express();
 
@@ -9,7 +11,9 @@ app.use(express.json());
 
 app.use('/cart', cartRouter)
 
-app.use('/payments', paymentRoutes)
+app.use('/purchase', purchaseRoutes)
+
+async function startDB() {await initDB()}
 
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
     console.log(err.message);
@@ -26,3 +30,4 @@ app.listen(PORT, () => {
     console.log(`http://localhost:${PORT}`)
 })
 
+startDB().catch(console.error)
